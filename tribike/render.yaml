@@ -1,39 +1,32 @@
 services:
   - type: web
     name: tribike
-    runtime: php
+    env: docker
     plan: free
-    region: oregon
-    buildCommand: ""
-    startCommand: php -S 0.0.0.0:$PORT
+    region: singapore
+    branch: main
+    autoDeploy: true
     envVars:
-      - key: PHP_VERSION
-        value: 8.1
       - key: DB_HOST
         fromDatabase:
-          name: tribike-db
+          name: tribike_db
           property: host
       - key: DB_PORT
         fromDatabase:
-          name: tribike-db
+          name: tribike_db
           property: port
       - key: DB_NAME
         fromDatabase:
-          name: tribike-db
+          name: tribike_db
           property: database
       - key: DB_USER
         fromDatabase:
-          name: tribike-db
+          name: tribike_db
           property: user
       - key: DB_PASS
         fromDatabase:
-          name: tribike-db
+          name: tribike_db
           property: password
-    healthCheckPath: /index.php
-
 databases:
-  - name: tribike-db
-    databaseName: tribike
-    user: tribike_user
+  - name: tribike_db
     plan: free
-    region: oregon
