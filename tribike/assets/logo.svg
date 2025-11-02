@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" width="200" height="100">
+  <!-- Bicycle Frame -->
+  <circle cx="40" cy="70" r="15" fill="none" stroke="#2c3e50" stroke-width="3"/>
+  <circle cx="160" cy="70" r="15" fill="none" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="40" y1="55" x2="70" y2="30" stroke="#2c3e50" stroke-width="4"/>
+  <line x1="70" y1="30" x2="130" y2="30" stroke="#2c3e50" stroke-width="4"/>
+  <line x1="130" y1="30" x2="160" y2="55" stroke="#2c3e50" stroke-width="4"/>
+  <line x1="40" y1="70" x2="160" y2="70" stroke="#2c3e50" stroke-width="3"/>
+  <!-- Pedal Circle -->
+  <circle cx="90" cy="70" r="8" fill="#3498db" stroke="#2c3e50" stroke-width="2"/>
+  <!-- Seat -->
+  <path d="M 70 30 L 75 25 L 80 30" fill="none" stroke="#2c3e50" stroke-width="3"/>
+  <!-- Handlebar -->
+  <line x1="130" y1="30" x2="140" y2="20" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="140" y1="20" x2="150" y2="20" stroke="#2c3e50" stroke-width="3"/>
+</svg>
+
+
+

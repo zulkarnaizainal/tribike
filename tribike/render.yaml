@@ -1,0 +1,39 @@
+services:
+  - type: web
+    name: tribike
+    runtime: php
+    plan: free
+    region: oregon
+    buildCommand: ""
+    startCommand: php -S 0.0.0.0:$PORT
+    envVars:
+      - key: PHP_VERSION
+        value: 8.1
+      - key: DB_HOST
+        fromDatabase:
+          name: tribike-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: tribike-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: tribike-db
+          property: database
+      - key: DB_USER
+        fromDatabase:
+          name: tribike-db
+          property: user
+      - key: DB_PASS
+        fromDatabase:
+          name: tribike-db
+          property: password
+    healthCheckPath: /index.php
+
+databases:
+  - name: tribike-db
+    databaseName: tribike
+    user: tribike_user
+    plan: free
+    region: oregon
