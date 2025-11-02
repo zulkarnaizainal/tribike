@@ -1,17 +1,17 @@
-# Guna image PHP 8.2 dengan Apache
+# Gunakan PHP 8.2 dengan Apache
 FROM php:8.2-apache
 
-# Pasang sambungan PHP yang diperlukan untuk MySQL
-RUN docker-php-ext-install mysqli pdo pdo_mysql
+# Pasang sambungan PostgreSQL untuk PHP
+RUN apt-get update && apt-get install -y libpq-dev && docker-php-ext-install pgsql pdo_pgsql
 
-# Salin semua fail projek ke direktori pelayan web Apache
+# Salin semua fail projek ke direktori pelayan web
 COPY . /var/www/html/
 
-# Tetapkan permission fail
+# Tetapkan permission
 RUN chown -R www-data:www-data /var/www/html
 
-# Dedahkan port 80 untuk HTTP
+# Dedahkan port 80
 EXPOSE 80
 
-# Mula Apache
+# Jalankan Apache bila container mula
 CMD ["apache2-foreground"]
